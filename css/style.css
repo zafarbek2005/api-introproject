@@ -1,0 +1,42 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    max-width: 1600px !important;
+    margin: 0 auto;
+    padding: 0 30px;
+    padding-top: 80px;
+}
+header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    padding-bottom: 80px;
+}
+.big-card{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.big-card img{
+    width: 200px;
+    height: 300px;
+    transform: translate(20%, 9%) !important;
+}
+.card-title{
+    padding-top: 50px;
+}
+.card-text{
+   
+
+}
+.card{
+    width: 600px;
+    height: 700px;
+}
