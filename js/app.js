@@ -1,35 +1,33 @@
 const api_url = 'https://fakestoreapi.com/products';
 
-async function Fetch_data(api) {
+async function fetchData(api) {
     try {
         const response = await fetch(api);
         const data = await response.json();
-        create_card(data);
+        createCards(data);
     } catch (error) {
         console.log(error);
     }
 }
-
-function create_card(data) {
+function createCards(data) {
     const container = document.querySelector('.big-card');
     let fragment = document.createDocumentFragment();
 
-    data.forEach(post => {
+    data.forEach(product => {
         const card = document.createElement('div');
-        card.classList.add('card');
-        card.style.width = '18rem';
+        card.classList.add('product-card');
         card.innerHTML = `
-            <img src="${post.image}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">${post.title}</h5>
-              <p class="card-text">${post.description}</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
+            <div class="label">НОВИНКА</div>
+            <img src="${product.image}" alt="Product Image">
+            <div class="title">${product.title}</div>
+            <div class="price">${product.price} сум</div>
+            <div class="installment">${product.installment} сум x ${product.installmentPeriod} мес</div>
+            <button>Купить сейчас</button>
         `;
         fragment.appendChild(card);
     });
-
+    container.innerHTML = '';
     container.appendChild(fragment);
 }
 
-Fetch_data(api_url);
+fetchData(api_url);
