@@ -1,14 +1,19 @@
 const api_url = 'https://fakestoreapi.com/products';
+const loading = document.querySelector('.load');
 
 async function fetchData(api) {
-    try {
-        const response = await fetch(api);
-        const data = await response.json();
-        createCards(data);
-    } catch (error) {
-        console.log(error);
-    }
+  try {
+      const response = await fetch(api);
+      const data = await response.json();
+      createCards(data);
+  } catch (error) {
+      console.log(error);
+  }
+  finally {
+      loading.style.display = "none";
+  }
 }
+
 function createCards(data) {
     const container = document.querySelector('.big-card');
     let fragment = document.createDocumentFragment();
