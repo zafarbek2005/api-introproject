@@ -27,7 +27,7 @@ function createCards(data) {
             <div class="title">${product.title}</div>
             <div class="price">${product.price} сум</div>
             <div class="installment">${product.installment} сум x ${product.installmentPeriod} мес</div>
-            <button>Купить сейчас</button>
+            <button style="cursor:pointer !important">Купить сейчас</button>
         `;
         fragment.appendChild(card);
     });
